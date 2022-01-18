@@ -1,4 +1,4 @@
-package com.everyday;
+package com.everyday.controller;
 
 import java.util.Random;
 
@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.everyday.model.ResponseDTO;
 import com.everyday.model.UserDTO;
+import com.everyday.service.UserService;
 
 @RestController
 @RequestMapping(value = "/api/v1/app/")

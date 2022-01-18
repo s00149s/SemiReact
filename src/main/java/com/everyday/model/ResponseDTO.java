@@ -1,4 +1,4 @@
-package com.everyday;
+package com.everyday.model;
 
 public class ResponseDTO {
 
