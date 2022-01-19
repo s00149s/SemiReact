@@ -16,6 +16,7 @@ import com.everyday.service.UserService;
 @RestController
 @RequestMapping(value = "/api/v1/app/")
 public class UserController {
+	
 
     @Autowired
     private UserService userService;
