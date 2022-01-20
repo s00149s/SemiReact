@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.everyday.mapper.UserMapper">
+     <!-- 게시판 등록 -->
+    <insert id="insert">
+        insert into user(id, password, email, nickname, enteranceyear, school) values (#{id}, #{password}, #{email}, #{nickname}, #{enteranceyear}, #{school})
+    </insert>
+    
+    <select id="selectAll" resultType="HashMap">
+        select * from user
+	</select>
+	
+	<select id="selectOne" resultType="com.everyday.model.UserDTO">
+        select * from user where id = #{id}
+	</select>
+	
+	<insert id="update">
+        update user set password=#{password}, email=#{email}, nickname=#{nickname}, enteranceyear=#{enteranceyear}, school=#{school} where id = #{id}
+    </insert>
+
+  </mapper>
