@@ -15,46 +15,20 @@ CREATE TABLE tb_user
 
 );
 
+insert into tb_user(f_user_id, f_user_pwd, u_user_name) values('uid001', 'upwd001', 'uname001');
+insert into tb_user(f_user_id, f_user_pwd, u_user_name) values('uid002', 'upwd002', 'uname002');
+insert into tb_user(f_user_id, f_user_pwd, u_user_name) values('uid003', 'upwd003', 'uname003');
+
 CREATE TABLE user
 (
     id VARCHAR(50) NOT NULL PRIMARY KEY,
-    password VARCHAR(20),
-    email VARCHAR(50),
-    nickname VARCHAR(20),
-    enteranceyear VARCHAR(10),
-    school VARCHAR(20),
+    password VARCHAR(20) NOT NULL,
+    email VARCHAR(50) NOT NULL,
+    nickname VARCHAR(20) NOT NULL,
+    enteranceyear VARCHAR(10) NOT NULL,
+    school VARCHAR(20) NOT NULL,
     token VARCHAR(255),
     tokenexpiration INT(10)
 );
 
-
-    id: {
-        type: String,
-        maxLength: 50,
-        unique: 1
-    },
-    password: {
-        type: String,
-    },
-    email: {
-        type: String,
-    },
-    nickname: {
-        type: String,
-    },
-    entranceYear: {
-        type: String,
-    },
-    school: {
-        type: String,
-    },
-    token: {
-        type: String,
-    },
-    tokenExpiration: {
-        type: Number,
-    }
-
-insert into tb_user(f_user_id, f_user_pwd, u_user_name) values('uid001', 'upwd001', 'uname001');
-insert into tb_user(f_user_id, f_user_pwd, u_user_name) values('uid002', 'upwd002', 'uname002');
-insert into tb_user(f_user_id, f_user_pwd, u_user_name) values('uid003', 'upwd003', 'uname003');
+insert into user(id, password, email, nickname, enteranceyear, school) values('admin', '1112', 'admin@study.react', 'REACTER', '2021', 'PSICKUNIV');

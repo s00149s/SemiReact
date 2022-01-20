@@ -6,6 +6,8 @@ import java.util.Random;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -39,9 +41,9 @@ public class UserController {
         user.setId("grmoon" + Integer.toString(id));
         user.setEmail("gmoon.au@gmail.com");
         user.setEntranceyear("2002");
-        user.setNickname("지라이");
+        user.setNickname("PINGOLI");
         user.setPassword("1112");
-        user.setSchool("한국대학교");
+        user.setSchool("YUST");
                
         return userService.regist(user);
         //mapper.insert(user);
@@ -56,9 +58,21 @@ public class UserController {
         String password =  Integer.toString(new Random().nextInt(100000));
     
         user.setPassword(password);
-        user.setSchool("한국대학교" + password);
+        user.setSchool("YUST_" + password);
                
         return userService.edit(user);
         //mapper.insert(user);
     }
+    
+	// check id
+	@GetMapping("checkExistId/{id}")
+	public Boolean CheckUserId(
+			@PathVariable String id) {
+		Boolean ret = false;
+		if(userService.getUserById(id) != null) {
+			ret = true;
+		}
+		return ret;
+	}
+
 }
