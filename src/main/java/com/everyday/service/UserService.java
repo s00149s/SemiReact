@@ -8,6 +8,7 @@ import com.everyday.model.UserDTO;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 @Service
 public class UserService {
@@ -15,11 +16,27 @@ public class UserService {
     @Autowired
     UserMapper userMapper;
 
-    public ArrayList<HashMap<String, Object>> findAll() {
-        return userMapper.findAll();
+    //public ArrayList<HashMap<String, Object>> findAll() {
+    //    return userMapper.findAll();
+    //}
+    
+    public UserDTO regist(UserDTO user ) {
+    	userMapper.insert(user);
+    	return userMapper.selectOne(user.getId());
     }
     
-    public void regist(UserDTO user ) {
-    	userMapper.insert(user);
+    public UserDTO edit(UserDTO user ) {
+    	userMapper.update(user);
+    	return userMapper.selectOne(user.getId());
     }
+
+	public List<UserDTO> getAllUsers() {
+		// TODO Auto-generated method stub
+		return userMapper.selectAll();
+	}
+	
+	public UserDTO getUserById(String id) {
+		// TODO Auto-generated method stub
+		return userMapper.selectOne(id);
+	}
 }
