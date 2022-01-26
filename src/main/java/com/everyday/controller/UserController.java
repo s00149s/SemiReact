@@ -29,6 +29,7 @@ import com.everyday.service.UserService;
 @RestController
 @RequestMapping(value = "/api/")
 public class UserController {
+	
 
 	private static final Logger log = LoggerFactory.getLogger(UserController.class);
 	
