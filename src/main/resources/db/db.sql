@@ -28,33 +28,24 @@ CREATE TABLE user
 );
 
 
-    id: {
-        type: String,
-        maxLength: 50,
-        unique: 1
-    },
-    password: {
-        type: String,
-    },
-    email: {
-        type: String,
-    },
-    nickname: {
-        type: String,
-    },
-    entranceYear: {
-        type: String,
-    },
-    school: {
-        type: String,
-    },
-    token: {
-        type: String,
-    },
-    tokenExpiration: {
-        type: Number,
-    }
-
 insert into tb_user(f_user_id, f_user_pwd, u_user_name) values('uid001', 'upwd001', 'uname001');
 insert into tb_user(f_user_id, f_user_pwd, u_user_name) values('uid002', 'upwd002', 'uname002');
 insert into tb_user(f_user_id, f_user_pwd, u_user_name) values('uid003', 'upwd003', 'uname003');
+
+
+#2022-01-22
+
+ALTER TABLE user
+ADD COLUMN sex CHAR(1);
+
+
+UPDATE user set sex='F' WHERE sex IS NULL;
+
+
+ALTER TABLE user
+ADD COLUMN del_yn CHAR(1);
+
+
+UPDATE user set del_yn='N' WHERE del_yn IS NULL;
+
+
