@@ -1,3 +1,6 @@
+npm install styled-components
+npm install @material-ui/lab
+
 게시판(BoardController)
 user profile에 설정한 닉네임과 학교 표시
 게시판 글 작성 기능(300자 이내)

@@ -49,3 +49,13 @@ ADD COLUMN del_yn CHAR(1);
 UPDATE user set del_yn='N' WHERE del_yn IS NULL;
 
 
+CREATE TABLE `everyday`.`board` (
+  `idx` INT NOT NULL AUTO_INCREMENT,
+  `userid` VARCHAR(50) NULL,
+  `title` VARCHAR(50) NOT NULL,
+  `content` VARCHAR(600) NOT NULL,
+  `writer` VARCHAR(45) NOT NULL,
+  `insdate` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`idx`));
+
+insert into board(title, content, writer) values('title moon', 'content moon', 'moon');

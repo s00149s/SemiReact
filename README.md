@@ -6,3 +6,6 @@ SemiReact/src/main/resources/db/db.sql
 Run As > Spring Boot App
 
 http://localhost:8080/api/v1/app/findAll
+
+
+board table 생성
